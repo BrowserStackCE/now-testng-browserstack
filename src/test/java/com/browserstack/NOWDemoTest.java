@@ -9,7 +9,9 @@ public class NOWDemoTest extends SeleniumTest {
     public void openTestPage() throws Exception {
         driver.get("https://www.bstackdemo.com");
 
-        // Check the title. Always passes.
-        Assert.assertTrue(driver.getTitle().matches(driver.getTitle()));
+        String webDomainFromEnv = System.getenv("NOW_WEB_DOMAIN");
+
+        // Check the title.
+        Assert.assertTrue(driver.getTitle().toString().contains(webDomainFromEnv));
     }
 }
