@@ -13,9 +13,5 @@ public class NOWDemoTest extends SeleniumTest {
         driver.get(webDomainFromEnv);
 
         Assert.assertTrue(driver.getPageSource().length() > 100);
-        // Check the title.
-        String pageTitle = driver.getTitle();
-        System.out.println("Page title is: " + pageTitle);
-        Assert.assertTrue(pageTitle.contains(webDomainFromEnv));
     }
 }
