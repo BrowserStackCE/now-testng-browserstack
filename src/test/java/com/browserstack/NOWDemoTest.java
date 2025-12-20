@@ -5,11 +5,13 @@ import org.testng.annotations.Test;
 import com.browserstack.SeleniumTest;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import com.browserstack.v2.utils.BrowserStack; 
+
 
 public class NOWDemoTest extends SeleniumTest {
     @Test
     public void openTestPage() throws Exception {
-
+        BrowserStack.setCustomTag("ID", System.getenv().getOrDefault("BSTACK_NOW_TEST_ID", "TC-1"));
         String content = new String(Files.readAllBytes(Paths.get("browserstack.yml")));
         System.out.println(content);
         
